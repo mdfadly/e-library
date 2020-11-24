@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-
-export default class Header extends Component {
+import { Link } from 'react-router-dom'
+import './HeaderUser.style.css';
+export default class HeaderUser extends Component {
     constructor() {
         super();
         this.state = {
@@ -69,68 +70,11 @@ export default class Header extends Component {
                     </li>
                 </ul>
                 <ul className="navbar-nav ml-auto">
-                    <li role="presentation" className="nav-item dropdown open" style={{ paddingLeft: '15px', paddingTop: '8px' }}>
-                        <a href="" className="dropdown-toggle info-number" id="navbarDropdown1" data-toggle="dropdown"
-                            aria-expanded="false" style={mystyle}>
-                            <i className="fa fa-bell fa-lg"></i>
-                        </a>
-                        <ul className="dropdown-menu list-unstyled msg_list" role="menu" aria-labelledby="navbarDropdown1">
-                            <li className="nav-item">
-                                <a className="dropdown-item">
-                                    <span className="image"><img src="assets/images/user.png" alt="Profile Image" /></span>
-                                    <span>
-                                        <span>John Smith</span>
-                                    </span>
-                                    <span className="message">
-                                        Film festivals used to be do-or-die moments for movie makers. They were where...
-                                        </span>
-                                </a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="dropdown-item">
-                                    <span className="image"><img src="assets/images/user.png" alt="Profile Image" /></span>
-                                    <span>
-                                        <span>John Smith</span>
-
-                                    </span>
-                                    <span className="message">
-                                        Film festivals used to be do-or-die moments for movie makers. They were where...
-                                        </span>
-                                </a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="dropdown-item">
-                                    <span className="image"><img src="assets/images/user.png" alt="Profile Image" /></span>
-                                    <span>
-                                        <span>John Smith</span>
-
-                                    </span>
-                                    <span className="message">
-                                        Film festivals used to be do-or-die moments for movie makers. They were where...
-                                        </span>
-                                </a>
-                            </li>
-                            <li className="nav-item">
-                                <a className="dropdown-item">
-                                    <span className="image"><img src="assets/images/user.png" alt="Profile Image" /></span>
-                                    <span>
-                                        <span>John Smith</span>
-
-                                    </span>
-                                    <span className="message">
-                                        Film festivals used to be do-or-die moments for movie makers. They were where...
-                                        </span>
-                                </a>
-                            </li>
-                            <li className="nav-item">
-                                <div className="text-center">
-                                    <a className="dropdown-item">
-                                        <strong>See All Alerts</strong>
-                                        <i className="fa fa-angle-right"></i>
-                                    </a>
-                                </div>
-                            </li>
-                        </ul>
+                    <li className="nav-item" style={{ paddingLeft: "15px" }}>
+                        <Link to="/cart" className="nav-link">
+                            <i className="fa fa-shopping-cart fa-lg" style={{ fontSize: '17px' }}></i>
+                            <span id="cartCount" className="badge badge-danger navbar-badge">2</span>
+                        </Link>
                     </li>
                     <li className="nav-item" style={{ paddingLeft: '15px' }}>
                         <form className="form-inline pt-2">

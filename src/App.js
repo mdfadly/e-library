@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
-import Header from './components/Header';
-import SideBar from './components/SideBar';
-import Content from './components/Content';
-import Footer from './components/Footer';
+
 import MainNavigations from './Navigations/MainNavigations'
+import MainNavigationsUser from './Navigations/MainNavigationsUser'
 class App extends Component {
 
   render() {
     return (
-      <MainNavigations />
+      // <MainNavigations />
+      <MainNavigationsUser />
     );
   }
 }

@@ -4,36 +4,40 @@ import {
     Route
 } from "react-router-dom"
 
-import Header from '../components/Header';
-import SideBar from '../components/SideBar';
+import HeaderUser from '../components/HeaderUser';
+import SideBarUser from '../components/SideBarUser';
 import Content from '../components/Content';
 import Footer from '../components/Footer';
-import Profile from '../Screens/Profile/Profile';
 import ProfileUser from '../Screens/ProfileUser/ProfileUser';
+import Cart from '../Screens/Cart/Cart';
+import Wishlist from '../Screens/Wishlist/Wishlist';
 
-class MainNavigation extends Component {
+class MainNavigationsUser extends Component {
     render() {
         return (
             <Router>
                 <div className="main_container">
                     <div className="col-md-3 left_col">
                         <Route path='/'>
-                            <SideBar />
+                            <SideBarUser />
                         </Route>
                     </div>
                     <div className="top_nav">
                         <Route path='/'>
-                            <Header />
+                            <HeaderUser />
                         </Route>
                     </div>
-                    <Route path='/index'>
+                    <Route path='/indexUser'>
                         <Content />
                     </Route>
-                    <Route path='/profile'>
-                        <Profile />
-                    </Route>
-                    <Route path='/profileuser'>
+                    <Route path='/profileUser'>
                         <ProfileUser />
+                    </Route>
+                    <Route path='/cart'>
+                        <Cart />
+                    </Route>
+                    <Route path='/wishlist'>
+                        <Wishlist />
                     </Route>
                     <Route path='/'>
                         <Footer />
@@ -44,4 +48,4 @@ class MainNavigation extends Component {
     }
 }
 
-export default MainNavigation
+export default MainNavigationsUser

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom'
 
-class SideBar extends Component {
+class SideBarUser extends Component {
     constructor() {
         super();
         this.state = {
@@ -33,19 +33,19 @@ class SideBar extends Component {
                     </div>
                     <div className="profile_info">
                         <span>Welcome,</span>
-                        <h2>Admin</h2>
+                        <h2>User</h2>
                     </div>
                 </div>
                 <div className="profile_name">
-                    <h4>Admin</h4>
+                    <h4>User</h4>
                 </div>
                 <br />
 
                 <div id="sidebar-menu" className="main_menu_side hidden-print main_menu">
                     <div className="menu_section">
                         <ul className="nav side-menu">
-                            <li className={(pathCurrent[1] === 'profile' ? "current-page" : "")}>
-                                <Link to="/profile">
+                            <li className={(pathCurrent[1] === 'profileUser' ? "current-page" : "")}>
+                                <Link to="/profileUser">
                                     <i className="fa fa-user"></i>
                                     Profile
                                     </Link>
@@ -53,39 +53,61 @@ class SideBar extends Component {
                         </ul>
                         <h3>General</h3>
                         <ul className="nav side-menu">
-                            <li className={(pathCurrent[1] === 'index' ? "current-page" : "")}>
-                                <Link to="/index">
+                            <li className={(pathCurrent[1] === 'indexUser' ? "current-page" : "")}>
+                                <Link to="/indexUser">
                                     <i className="fa fa-book"></i>
                                     Explore
                                 </Link>
+
                             </li>
-                            <li className={(pathCurrent[1] === 'history' ? "current-page" : "")}>
-                                <Link to="/history">
+                            <li className={(pathCurrent[1] === 'historyUser' ? "current-page" : "")}>
+
+                                <Link to="/historyUser">
                                     <i className="fa fa-history"></i>
                                     History
-                                    </Link>
+                                </Link>
+
                             </li>
-                            <li onClick={() => this.setState({ condition: !condition })} className={this.state.condition ? "active" : ""}>
+                            <li className={(pathCurrent[1] === 'catalog' ? "current-page" : "")}>
+
+                                <Link to="/catalog">
+                                    <i className="fa fa-plus"></i>
+                                    Catalog
+                                    </Link>
+
+                            </li>
+                            <li onClick={() => this.setState({ condition: !condition })} className={this.state.condition || pathCurrent[1] === 'cart' || pathCurrent[1] === 'wishlist' ? "active" : ""}>
                                 <a>
-                                    <i className="fa fa-edit"></i> Manage <span className="fa fa-chevron-down"></span>
+                                    <i className="fa fa-edit"></i> Rent <span className="fa fa-chevron-down"></span>
                                 </a>
-                                <ul className="nav child_menu" style={{ display: this.state.condition ? 'block' : 'none' }}>
-                                    <li className={(pathCurrent[1] === 'manageUser' ? "current-page" : "")}>
-                                        <Link to="/manageUser">
-                                            User
+                                <ul className="nav child_menu" style={{ display: this.state.condition || pathCurrent[1] === 'cart' || pathCurrent[1] === 'wishlist' ? 'block' : 'none' }}>
+                                    <li className={(pathCurrent[1] === 'cart' ? "current-page" : "")}>
+                                        <Link to="/cart">
+                                            Cart
                                         </Link>
                                     </li>
-                                    <li className={(pathCurrent[1] === 'manageBook' ? "current-page" : "")}>
-                                        <Link to="/manageBook">
-                                            Book
-                                        </Link>
-                                    </li>
-                                    <li className={(pathCurrent[1] === 'manageDonation' ? "current-page" : "")}>
-                                        <Link to="/manageDonation">
-                                            Donation
+                                    <li className={(pathCurrent[1] === 'wishlist' ? "current-page" : "")}>
+                                        <Link to="/wishlist">
+                                            Wishlist
                                         </Link>
                                     </li>
                                 </ul>
+                            </li>
+                            <li className={(pathCurrent[1] === 'payment' ? "current-page" : "")}>
+
+                                <Link to="/payment">
+                                    <i className="fa fa-money"></i>
+                                    payment
+                                </Link>
+
+                            </li>
+                            <li className={(pathCurrent[1] === 'donation' ? "current-page" : "")}>
+
+                                <Link to="/donation">
+                                    <i className="fa fa-gift"></i>
+                                    donation
+                                </Link>
+
                             </li>
                         </ul>
                     </div>
@@ -96,8 +118,8 @@ class SideBar extends Component {
                         <span className="glyphicon glyphicon-off" aria-hidden="true"></span>
                     </a>
                 </div>
-            </div >
+            </div>
         )
     }
 }
-export default withRouter(SideBar);
+export default withRouter(SideBarUser);
